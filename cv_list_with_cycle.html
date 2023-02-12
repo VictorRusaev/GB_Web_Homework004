@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Мое резюме</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: 'Jost', sans-serif;}
+    h2 {background-color: #ffffff;}
+    </style>
+  </head>
+<body class="w3-light-grey">
+<?php 
+	$name = 'Victor Rusaev';
+    $age = '35 years';
+  $job = 'BI Analyst';
+  $city = 'Moscow';
+  $mail = 'rusaev74@mail.ru';
+  $phone = '+7 981 186 36 71';
+  
+  $skills = [
+    'skill_name' => ['Excel', 'Python', 'SQL', 'GitHub'],
+     'level' => [70, 20, 10, 50]
+  ];
+  
+  $languages = [
+  	'language_name' => ['Russian','English', 'Italian'],
+    'level' => [100, 80, 15]
+  ];
+  
+  $experience = [
+  	'company' => ['ZIEHL-ABEGG Russia', 'Peikko Russia'],
+    'position' => ['Business development director', 'Sales director'],
+  	'duration' => ['2020 - till now', '2012 - 2020']
+  ];
+    
+  $duties = [
+    'za' => [
+    'Set up advertising campaigns in Google Ads and Yandex.Direct', 
+    'Compiled reports on data uploaded from the database', 
+    'Analyzed sales figures by segment, individual products, regions and customers', 
+    'Made a general sales forecast for the year', 
+    'Made a sales forecast for the year for individual product groups and customers', 
+    'Calculated the ROE indicator', 
+    'Participated in the compilation and analyzed the Cash Flow Statement', 
+    'Analyzed and evaluated the potential of the direction for the start and development of sales', 
+    'Improved the quality of work in CRM, developed guides and trained colleagues'
+    ], 
+    
+    'peikko' => [
+    'Analyzed sales by various parameters and planned the work of the sales department', 
+    'Predicted sales by segments and products', 
+    'Prepared sales reports for management and the Board of Directors (Russian and English)', 
+    'Calculated the profit margin and determined the measures necessary to increase it (product groups, regions and customers)', 
+    'Participated in the compilation and analysis of the Cash Flow Statement', 
+    'Participated in budget planning',
+    'Analyzed and evaluated the potential of the direction for sales development', 
+	'Implemented and developed the use of CRM in the sales department, developed work guides and trained colleagues'
+    ]
+  ];
+  
+  $education = [
+  	'school' => ['Geek Brains', 'BMSTU', 'South-Ural State University'],
+    'dates' => ['2022-2023', '2022', '2004-2009'],
+    'degree' => ['BI Analyst', 'Excel. Advanced', 'Specialist degree in Mechanical Engineering']
+  ];
+?>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="https://img.hhcdn.ru/photo/565339133.jpeg?t=1676206275&h=VOhHGcTxSHu8-HyYruRBSA" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2><?php echo $name ?></h2>
+          </div>
+        </div>
+        <div class="w3-container">
+        	<p><i class="fa fa-universal-access fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $age ?></p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $job ?></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $city ?></p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $mail ?></p>
+          <p><i class="fa fa-mobile fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $phone ?></p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Навыки</b></p>
+          <?php for($i=0; $i<count($skills['skill_name']); $i++) {?>
+          <p><?php echo $skills['skill_name'][$i] ?></p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][$i] ?>%"><?php echo $skills['level'][$i] ?>%</div>
+          </div>
+          <?php } ?>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Языки</b></p>
+          <?php for($i=0; $i<count($languages['language_name']); $i++) {?>
+          <p><?php echo $languages['language_name'][$i] ?></p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $languages['level'][$i] ?>%"></div>
+          </div>
+          <?php } ?>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Опыт работы</h2>
+        <?php for($i=0; $i<count($experience['company']); $i++) {?>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b><?php echo $experience ['company'][$i] ?></b></h4>
+          <h5 class="w3-opacity"><b><?php echo $experience ['position'][$i] ?></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $experience ['duration'][$i] ?></span></h6>
+          <p>
+          <?php for($j=0; $j<count($duties['za']); $j++) {?>
+          <li><?php echo $duties['za'][$j] ?></li>
+          <?php } ?>
+          </p>
+          <hr>
+        </div>
+        <?php } ?>
+        <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Образование</h2>
+        <?php for($i=0; $i<count($education['school']); $i++) {?>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b><?php echo $education['school'][$i] ?></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $education['dates'][$i] ?></h6>
+          <p><?php echo $education['degree'][$i] ?></p>
+          <hr>
+        </div>
+        <?php } ?>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <a href="http://t.me/viktor_rusaev"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+  <a href="http://instagram.com/viktor.rusaev"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="http://www.linkedin.com/in/victor-rusaev-32ba94a6/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+ <!-- End footer -->
+ </footer>
+
+</body>
+</html>
